@@ -19,9 +19,9 @@ def notes():
 @views.route('/games')
 @login_required
 def games():
-    return "<h1>Games</h1>"
+    return render_template("games.html",user=current_user)
 
 @views.route('/photos')
 @login_required
 def photos():
-    return "<h1>Photos</h1>"
+    return render_template("photos.html",user=current_user)
