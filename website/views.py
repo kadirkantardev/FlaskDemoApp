@@ -14,6 +14,9 @@ def home():
 @views.route('/notes',methods=['GET','POST'])
 @login_required
 def notes():
+
+    data = Note.query.filter_by(user_id=current_user.id).all()
+
     if request.method == 'POST':
         note_title = request.form.get('note-title')
         note_text = request.form.get('note-text')
@@ -32,7 +35,7 @@ def notes():
             
 
 
-    return render_template("notes.html",user=current_user)
+    return render_template("notes.html",user=current_user,user_notes=data)
 
 
 @views.route('/games')

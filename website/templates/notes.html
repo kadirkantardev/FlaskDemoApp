@@ -33,15 +33,19 @@
         </div>
 
         <div style="background-color:grey; width:2px; margin:0 50px"></div>
+        
 
-        <div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        {% for note in user_notes%}
+            <div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{note.name}}</h5>
+                        <p class="card-text">{{note.data}}</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
+        {% endfor %}
+        
 
 
     </div>
