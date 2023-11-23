@@ -4,53 +4,37 @@
 {% block content %} 
 <h1 align="center" style="margin-bottom: 50px;">Notes</h1> 
 
-<form method="post">
-    <div style="display:flex; justify-content: center;">
-        <div>
-            <div class="input-group mb-3">
-                <input type="text" 
-                class="form-control" 
-                placeholder="Note Title" 
-                id="note-title"
-                name="note-title"
-                style="max-width: fit-content;">
+<form method="post" class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Note Title" id="note-title" name="note-title">
             </div>
             
-            <div class="input-group">
-                <span class="input-group-text">Note</span>
-                <textarea 
-                class="form-control" 
-                id="note-text"
-                name="note-text"
-                style="max-width:300px;">
-                </textarea>
+            <div class="mb-3">
+                <textarea class="form-control" id="note-text" name="note-text" rows="3" placeholder="Note"></textarea>
             </div>
             
-            <div style="margin-top: 25px;">
+            <div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-
         </div>
 
-        <div style="background-color:grey; width:2px; margin:0 50px"></div>
         
-
         {% for note in user_notes%}
-            <div>
-                <div class="card" style="width: 18rem; margin:15px">
-                    <div class="card-body">
-                        <h5 class="card-title">{{note.name}}</h5>
-                        <p class="card-text">{{note.data}}</p>
-                    </div>
-                    
+        <div class="col-md-5">
+            <div class="card" style="width: 18rem; margin:15px">
+                <div class="card-body">
+                    <h5 class="card-title">{{note.name}}</h5>
+                    <p class="card-text">{{note.data}}</p>
                 </div>
             </div>
+        </div>
         {% endfor %}
-        
-
 
     </div>
 </form>
+
 
 
 
