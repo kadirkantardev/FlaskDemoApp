@@ -14,3 +14,14 @@ def home():
 @login_required
 def notes():
     return render_template("notes.html",user=current_user)
+
+
+@views.route('/games')
+@login_required
+def notes():
+    return "<h1>Games</h1>"
+
+@views.route('/photos')
+@login_required
+def notes():
+    return "<h1>Photos</h1>"
