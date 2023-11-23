@@ -27,7 +27,7 @@ def notes():
             db.session.add(note)
             db.session.commit()
             flash('Account Created!',category='success')
-            return redirect(url_for('views.notes'))
+            
 
 
     return render_template("notes.html",user=current_user)
