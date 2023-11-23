@@ -4,47 +4,48 @@
 {% block content %} 
 <h1 align="center" style="margin-bottom: 50px;">Notes</h1> 
 
+<form action="post">
+    <div style="display:flex; justify-content: center;">
+        <div>
+            <div class="input-group mb-3">
+                <input type="text" 
+                class="form-control" 
+                placeholder="Note Title" 
+                id="note-title"
+                name="note-title"
+                style="max-width: fit-content;">
+            </div>
+            
+            <div class="input-group">
+                <span class="input-group-text">Note</span>
+                <textarea 
+                class="form-control" 
+                id="note-text"
+                name="note-text"
+                style="max-width:300px;">
+                </textarea>
+            </div>
+            
+            <div style="margin-top: 25px;">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
 
-<div style="display:flex; justify-content: center;">
-    <div>
-        <div class="input-group mb-3">
-            <input type="text" 
-            class="form-control" 
-            placeholder="Note Title" 
-            id="note-title"
-            name="note-title"
-            style="max-width: fit-content;">
         </div>
-        
-        <div class="input-group">
-            <span class="input-group-text">Note</span>
-            <textarea 
-            class="form-control" 
-            id="note-text"
-            name="note-text"
-            style="max-width:300px;">
-            </textarea>
+
+        <div style="background-color:grey; width:2px; margin:0 50px"></div>
+
+        <div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
         </div>
-        
-        <div style="margin-top: 25px;">
-            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+
 
     </div>
-
-    <div style="background-color:grey; width:2px; margin:0 50px"></div>
-
-    <div>
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div>
-
-
-</div>
+</form>
 
 
 
