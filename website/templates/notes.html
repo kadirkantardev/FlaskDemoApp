@@ -2,55 +2,43 @@
 {% block title %}Notes{% endblock %}
 
 {% block content %} 
-<h1 align="center" style="margin-bottom: 50px;">Notes</h1> 
+    <h1 class="text-center mb-5">Notes</h1> 
 
-<form method="post">
-    <div style="display:flex; justify-content: center;">
-        <div>
-            <div class="input-group mb-3">
-                <input type="text" 
-                class="form-control" 
-                placeholder="Note Title" 
-                id="note-title"
-                name="note-title"
-                style="max-width: fit-content;">
-            </div>
-            
-            <div class="input-group">
-                <span class="input-group-text">Note</span>
-                <textarea 
-                class="form-control" 
-                id="note-text"
-                name="note-text"
-                style="max-width:300px;">
-                </textarea>
-            </div>
-            
-            <div style="margin-top: 25px;">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-
-        </div>
-
-        <div style="background-color:grey; width:2px; margin:0 50px"></div>
-        
-
-        {% for note in user_notes%}
-            <div class="container">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{note.name}}</h5>
-                        <p class="card-text">{{note.data}}</p>
-                    </div>
+    <form method="post" class="mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <input type="text" 
+                           class="form-control" 
+                           placeholder="Note Title" 
+                           id="note-title"
+                           name="note-title">
+                </div>
+                
+                <div class="mb-3">
+                    <textarea class="form-control" 
+                              id="note-text"
+                              name="note-text"
+                              rows="3"></textarea>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
-        {% endfor %}
-        
 
-
-    </div>
-</form>
-
-
-
+            <div class="col-md-1" style="background-color:grey;"></div>
+            
+            {% for note in user_notes %}
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ note.name }}</h5>
+                            <p class="card-text">{{ note.data }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </form>
 {% endblock %}
