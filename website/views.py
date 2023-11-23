@@ -1,5 +1,6 @@
-from flask import Blueprint,render_template
+from flask import Blueprint,render_template,request,flash
 from flask_login import login_required,current_user
+from . models import User,Note
 
 views = Blueprint('views',__name__)
 
@@ -10,9 +11,21 @@ def home():
     return render_template("home.html",user=current_user)
 
 
-@views.route('/notes')
+@views.route('/notes',methods=['GET','POST'])
 @login_required
 def notes():
+    if request.method == 'POST':
+        note_title = request.form.get('note_title')
+        note_text = request.form.get('note_text')
+
+        if note_title == "":
+            flash('Note Title Cannot Be Empty',category='error')
+        elif note_text == "":
+            flash('Note Cannot Be Empty',category='error')
+        else:
+            note = Note(name=note_title,data=note_text,user_id=current_user.id)
+
+
     return render_template("notes.html",user=current_user)
 
 
