@@ -18,10 +18,10 @@ def notes():
 
 @views.route('/games')
 @login_required
-def notes():
+def games():
     return "<h1>Games</h1>"
 
 @views.route('/photos')
 @login_required
-def notes():
+def photos():
     return "<h1>Photos</h1>"
