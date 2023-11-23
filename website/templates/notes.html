@@ -6,17 +6,26 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='notes.css') }}">
 
 <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Note Title" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="text" 
+    class="form-control" 
+    placeholder="Note Title" 
+    aria-label="Username" 
+    aria-describedby="basic-addon1" 
+    style="max-width: fit-content;">
 </div>
   
-  <div class="input-group">
+<div class="input-group">
     <span class="input-group-text">Note</span>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-  </div>
+    <textarea 
+    class="form-control" 
+    aria-label="With textarea"
+    style="max-width: fit-content;">
+    </textarea>
+</div>
 
-  <div style="margin-top: 25px;">
+<div style="margin-top: 25px;">
     <button type="submit" class="btn btn-primary">Sign Up</button>
-    </div>
+</div>
 
 
 
