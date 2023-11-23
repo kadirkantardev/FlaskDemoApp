@@ -32,25 +32,25 @@
 
         </div>
 
+        <div style="background-color:grey; width:2px; margin:0 50px"></div>
         
+
+        {% for note in user_notes%}
+            <div>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{note.name}}</h5>
+                        <p class="card-text">{{note.data}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
         
 
 
     </div>
 </form>
 
-<div style="background-color:grey; width:2px; margin:0 50px"></div>
-        
 
-{% for note in user_notes%}
-    <div>
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{note.name}}</h5>
-                <p class="card-text">{{note.data}}</p>
-            </div>
-        </div>
-    </div>
-{% endfor %}
 
 {% endblock %}
