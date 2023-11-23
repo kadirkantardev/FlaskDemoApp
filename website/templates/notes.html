@@ -5,27 +5,43 @@
 <h1 align="center">Notes</h1> 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='notes.css') }}">
 
-<div class="input-group mb-3">
-    <input type="text" 
-    class="form-control" 
-    placeholder="Note Title" 
-    aria-label="Username" 
-    aria-describedby="basic-addon1" 
-    style="max-width: fit-content;">
-</div>
-  
-<div class="input-group">
-    <span class="input-group-text">Note</span>
-    <textarea 
-    class="form-control" 
-    aria-label="With textarea"
-    style="max-width: fit-content;">
-    </textarea>
-</div>
-
-<div style="margin-top: 25px;">
-    <button type="submit" class="btn btn-primary">Sign Up</button>
-</div>
+<div style="display:flex; justify-content: center;">
+    <div>
+      <div class="input-group mb-3">
+        <input type="text" 
+        class="form-control" 
+        placeholder="Note Title" 
+        aria-label="Username" 
+        aria-describedby="basic-addon1" 
+        style="max-width: fit-content;">
+    </div>
+      
+    <div class="input-group">
+        <span class="input-group-text">Note</span>
+        <textarea 
+        class="form-control" 
+        aria-label="With textarea"
+        style="max-width:300px;">
+        </textarea>
+    </div>
+    
+    <div style="margin-top: 25px;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    <div style="background-color:grey; width:2px; margin:0 50px"></div>
+    <div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
