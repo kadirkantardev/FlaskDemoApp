@@ -1,7 +1,7 @@
-from flask import Blueprint,render_template,request,flash
+from flask import Blueprint,render_template,request,flash,redirect,url_for
 from flask_login import login_required,current_user
 from . models import User,Note
-
+from . import db
 views = Blueprint('views',__name__)
 
 
@@ -24,6 +24,10 @@ def notes():
             flash('Note Cannot Be Empty',category='error')
         else:
             note = Note(name=note_title,data=note_text,user_id=current_user.id)
+            db.session.add(note)
+            db.session.commit()
+            flash('Account Created!',category='success')
+            return redirect(url_for('views.notes'))
 
 
     return render_template("notes.html",user=current_user)
