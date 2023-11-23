@@ -15,7 +15,7 @@ def home():
 @login_required
 def notes():
     if request.method == 'POST':
-        note_title = request.form.get('note_title')
+        note_title = request.form.get('note-title')
         note_text = request.form.get('note_text')
 
         if note_title == "":
@@ -26,7 +26,9 @@ def notes():
             note = Note(name=note_title,data=note_text,user_id=current_user.id)
             db.session.add(note)
             db.session.commit()
-            flash('Account Created!',category='success')
+            flash('Note Created!',category='success')
+            flash(note_text,category='success')
+            flash(note_title,category='success')
             
 
 

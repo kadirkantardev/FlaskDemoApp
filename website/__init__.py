@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_migrate import Migrate
 from .models import db
 from .models import User,Note
 from .views import views
@@ -11,6 +11,7 @@ from flask_login import LoginManager
 
 def create_app():
     app = Flask(__name__)
+    migrate = Migrate(app, db)
     app.config['SECRET_KEY'] = 'SECRET'
 
     SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
