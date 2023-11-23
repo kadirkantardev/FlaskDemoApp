@@ -16,7 +16,7 @@ def home():
 def notes():
     if request.method == 'POST':
         note_title = request.form.get('note-title')
-        note_text = request.form.get('note_text')
+        note_text = request.form.get('note-text')
 
         if note_title == "":
             flash('Note Title Cannot Be Empty',category='error')
