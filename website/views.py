@@ -30,7 +30,7 @@ def notes():
             db.session.add(note)
             db.session.commit()
             flash('Note Created!',category='success')
-            redirect(url_for('views.notes'))
+            return redirect(url_for('views.notes'))
             
 
 
